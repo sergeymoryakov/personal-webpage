@@ -31,7 +31,7 @@ function drawSnowflakes() {
 
 function moveSnowflakes() {
     for (let flake of snowflakes) {
-        flake.y += Math.pow(flake.density, 0.25) + 0.25;
+        flake.y += Math.pow(flake.density, 2) + 1;
         if (flake.y > canvas.height) {
             flake.y = 0;
         }
