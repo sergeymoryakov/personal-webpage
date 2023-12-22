@@ -1,47 +1,26 @@
-const canvas = document.getElementById("snowCanvas");
-const ctx = canvas.getContext("2d");
+const card = document.querySelector(".card");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// create snowflake every random interval
+setInterval(() => {
+    card.appendChild(createFlake());
+}, 100);
 
-const snowflakes = [];
-
-function createSnowflakes() {
-    for (let i = 0; i < 100; i++) {
-        snowflakes.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            radius: Math.random() * 4 + 1,
-            density: Math.random() * 2,
-        });
+// remove snowflakes when they reach the bottom of the screen
+document.addEventListener("animationend", (e) => {
+    if (e.target.classList.contains("snowflake")) {
+        e.target.remove();
     }
-}
+});
 
-function drawSnowflakes() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "white";
-    ctx.beginPath();
-    for (let flake of snowflakes) {
-        ctx.moveTo(flake.x, flake.y);
-        ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2, true);
-    }
-    ctx.fill();
-    moveSnowflakes();
-}
+// create random snowflakes
+function createFlake() {
+    const flake = document.createElement("div");
+    flake.classList.add("snowflake");
+    flake.style.left = `${Math.random() * 100}%`;
+    flake.style.animationDuration = `${Math.random() * 3 + 8}s`;
+    // flake.style.animationDuration = `15s`;
+    flake.style.opacity = Math.random();
+    flake.innerText = "❄️";
 
-function moveSnowflakes() {
-    for (let flake of snowflakes) {
-        flake.y += Math.pow(flake.density, 2) + 1;
-        if (flake.y > canvas.height) {
-            flake.y = 0;
-        }
-    }
+    return flake;
 }
-
-function updateSnowfall() {
-    drawSnowflakes();
-    requestAnimationFrame(updateSnowfall);
-}
-
-createSnowflakes();
-updateSnowfall();
