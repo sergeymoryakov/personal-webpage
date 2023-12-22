@@ -2,56 +2,62 @@
     color: #fff;
     font-size: 1em;
     position: absolute;
-    top: -10%;
+    top: -5%;
+    left: 0;
     width: 100%;
     height: 100%;
-    animation: fall 10s linear infinite;
+    /* animation: fall 10s linear infinite; */
+    animation: fall 25s;
 }
 
 @keyframes fall {
     to {
-        transform: translateY(100vh);
+        /* transform: translateY(100vh); */
+        transform: translateY(110%);
     }
 }
 
 /* Randomize snowflake positions and animations */
+/* 
 .snowflake:nth-child(1) {
     left: 10%;
-    animation-duration: 7s;
+    animation-duration: 1s;
 }
 .snowflake:nth-child(2) {
     left: 20%;
-    animation-duration: 8s;
+    animation-duration: 2s;
 }
 .snowflake:nth-child(3) {
     left: 30%;
-    animation-duration: 6s;
+    animation-duration: 3s;
 }
 .snowflake:nth-child(4) {
     left: 40%;
-    animation-duration: 9s;
+    animation-duration: 4s;
 }
 .snowflake:nth-child(5) {
     left: 50%;
-    animation-duration: 10s;
+    animation-duration: 5s;
 }
 .snowflake:nth-child(6) {
     left: 60%;
-    animation-duration: 7s;
+    animation-duration: 6s;
 }
 .snowflake:nth-child(7) {
     left: 70%;
-    animation-duration: 8s;
+    animation-duration: 7s;
 }
 .snowflake:nth-child(8) {
     left: 80%;
-    animation-duration: 6s;
+    animation-duration: 8s;
 }
 .snowflake:nth-child(9) {
     left: 90%;
     animation-duration: 9s;
-}
-.snowflake:nth-child(10) {
+} 
+*/
+
+/* .snowflake:nth-child(10) {
     left: 5%;
     animation-duration: 8s;
 }
@@ -90,6 +96,6 @@
 .snowflake:nth-child(19) {
     left: 95%;
     animation-duration: 11s;
-}
+} */
 
 /* ... continue for each snowflake ... */
