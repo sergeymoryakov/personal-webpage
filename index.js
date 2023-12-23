@@ -17,8 +17,8 @@ function createFlake() {
     const flake = document.createElement("div");
     flake.classList.add("snowflake");
     flake.style.left = `${Math.random() * 100}%`;
-    flake.style.animationDuration = `${Math.random() * 3 + 8}s`;
     // flake.style.animationDuration = `15s`;
+    flake.style.animationDuration = `${Math.random() * 3 + 8}s`;
     flake.style.opacity = Math.random();
     flake.innerText = "❄️";
 
