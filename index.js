@@ -1,4 +1,4 @@
-const card = document.querySelector(".card");
+const card = document.querySelector(".snowflake-frame");
 
 // create snowflake every random interval
 setInterval(() => {
